@@ -5,7 +5,8 @@ FROM amazon/aws-lambda-python:3.11
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && \
+  pip install -r requirements.txt
 
 # Copy the lambda function
 COPY . .
